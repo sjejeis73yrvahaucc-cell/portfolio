@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Creative Graphic Design Portfolio — Brand Identity, Product Design, E-commerce, Marketing & Apparel Mockups">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="author" content="Shubham Kumar">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Shubham Kumar — Graphic Designer Portfolio">
+    <meta property="og:description" content="Brand Identity, Product Design, E-commerce, Marketing & Apparel Mockups">
+    <meta property="og:type" content="website">
+    <title>Shubham Kumar — Graphic Designer Portfolio</title>
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect for Google Drive thumbnails -->
+    <link rel="preconnect" href="https://drive.google.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">Portfolio.</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span></span> Available for Freelance Work
+            </div>
+            <h1>Crafting Visual<br>Experiences That<br><span class="gradient-text">Leave a Mark</span></h1>
+            <p>Graphic designer specializing in brand identity, product design, e-commerce visuals, and marketing
+                creatives that drive engagement and conversions.</p>
+            <div class="hero-cta">
+                <a href="#portfolio" class="btn-primary">View My Work ↓</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-header reveal">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">Turning Ideas Into Visuals</h2>
+            <p class="section-subtitle">Blending creativity with strategy to deliver impactful designs.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-visual reveal">
+                <div class="about-visual-card">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Done</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Exp.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <h3>Hello, I'm a Creative Designer</h3>
+                <p>I bring brands to life through thoughtful design—from logo creation and packaging to e-commerce
+                    listing visuals and social media campaigns. My work spans multiple industries including food &
+                    beverage, health & wellness, fashion, and real estate.</p>
+                <p>Whether it's a product mockup for Amazon, a social media carousel, or a full brand identity, I focus
+                    on visuals that are not just beautiful, but strategic.</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">Brand Identity</span>
+                    <span class="skill-tag">Product Design</span>
+                    <span class="skill-tag">E-commerce</span>
+                    <span class="skill-tag">Social Media</span>
+                    <span class="skill-tag">Packaging</span>
+                    <span class="skill-tag">Apparel Mockups</span>
+                    <span class="skill-tag">UI Design</span>
+                    <span class="skill-tag">Marketing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header reveal">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Selected Works</h2>
+            <p class="section-subtitle">A curated collection of my recent design projects.</p>
+        </div>
+
+        <div class="filter-tabs reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="product">Product Design</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="apparel">Apparel</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+
+            <!-- ===================== BRANDING (10 items) ===================== -->
+
+            <div class="gallery-item show" data-category="branding" data-title="Brand Logo Design"
+                data-desc="Brand Identity">
+                <img src="https://drive.google.com/thumbnail?id=1zpqj_5ID3C9LLbzFMo88K-AQUQNrnebq&sz=w800"
+                    alt="Logo Design" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Brand Logo Design</h4>
+                    <p>Brand Identity</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="ATMOS Brand Design"
+                data-desc="UI/UX & Branding">
+                <img src="https://drive.google.com/thumbnail?id=1zVoKrYJoF2QRf7BvbTSVFUHzN6cg0wkB&sz=w800"
+                    alt="ATMOS 01" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>ATMOS Brand Design</h4>
+                    <p>UI/UX & Branding</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="ATMOS Brand Concept"
+                data-desc="UI/UX & Branding">
+                <img src="https://drive.google.com/thumbnail?id=1oSlwA8edoNiujjUrBeX1ECoZjs-BGDSC&sz=w800"
+                    alt="ATMOS Concept" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>ATMOS Brand Concept</h4>
+                    <p>UI/UX & Branding</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="ATMOS Design Exploration"
+                data-desc="UI/UX & Branding">
+                <img src="https://drive.google.com/thumbnail?id=1aUJPjLBf0hVJqIxxosyZnw8O5pCGbyrX&sz=w800"
+                    alt="ATMOS 02" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>ATMOS Design Exploration</h4>
+                    <p>UI/UX & Branding</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="Vedshil Cover Page"
+                data-desc="Brand Identity">
+                <img src="https://drive.google.com/thumbnail?id=1UAqpH3EHPKVfizlJ0WIbnxwe8GLe06H2&sz=w800"
+                    alt="Vedshil Cover" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Vedshil Cover Page</h4>
+                    <p>Brand Identity</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="Vedshil Certificate"
+                data-desc="Brand Collateral">
+                <img src="https://drive.google.com/thumbnail?id=1Zs4DwiJmkgg_sizFGypDAHXsx9_CiAUd&sz=w800"
+                    alt="Vedshil Certificate" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Vedshil Certificate</h4>
+                    <p>Brand Collateral</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="Artboard Brand Design"
+                data-desc="Visual Identity">
+                <img src="https://drive.google.com/thumbnail?id=1hAf0wabMcXwEwcEKqB1oDSz_hMA4LfFz&sz=w800"
+                    alt="Artboard Design" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Artboard Brand Design</h4>
+                    <p>Visual Identity</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="Brand Final Presentation"
+                data-desc="Brand Identity">
+                <img src="https://drive.google.com/thumbnail?id=1sJNBKqdo8w2kl15RFQ-v07fP4RhmJbny&sz=w800"
+                    alt="Final Brand" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Brand Final Presentation</h4>
+                    <p>Brand Identity</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding" data-title="Elara Brand Identity"
+                data-desc="Brand Design">
+                <img src="https://drive.google.com/thumbnail?id=1Yzotofu3Dy2hPXM71RKEH13qTI7xkac7&sz=w800"
+                    alt="Elara Brand" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Elara Brand Identity</h4>
+                    <p>Brand Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="branding product" data-title="OZiva Brand Visual"
+                data-desc="Brand & Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1ZR0J8KnUwQvx7YPEyIQwzP5zm1BQnmFS&sz=w800"
+                    alt="OZiva Brand" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Brand Visual</h4>
+                    <p>Brand & Product Design</p>
+                </div>
+            </div>
+
+            <!-- ===================== PRODUCT DESIGN (10 items) ===================== -->
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva PCOS Product"
+                data-desc="Product Photography">
+                <img src="https://drive.google.com/thumbnail?id=1DZ1lhEi6m069qYIXFh__tBDQnDm5t8yR&sz=w800"
+                    alt="OZiva PCOS" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva PCOS Product</h4>
+                    <p>Product Photography</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva Gut Balance"
+                data-desc="Product Photography">
+                <img src="https://drive.google.com/thumbnail?id=1Li48OBy29_8MqIX3m_JHlq2uGGD3cgyS&sz=w800"
+                    alt="OZiva Gut Balance" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Gut Balance</h4>
+                    <p>Product Photography</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva PCB Product"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1sD-zj1_uIezHI5nAcFdY24slt12uBsHE&sz=w800"
+                    alt="OZiva PCB" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva PCB Product</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva Skin Supplement Set"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=16ZDVlLraZiiCz22uSVSClo5cZ0hOr7Y0&sz=w800"
+                    alt="OZiva Skin Set" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Skin Supplement Set</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva Super Set"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1GRfox4R5vHh7cvFj6hCMwcKJGVuOBx0j&sz=w800"
+                    alt="OZiva Super Set" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Super Set</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva Green Food"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1YOFhjjrWY4-QvaSsnUeZ8j5WYgzwLxoY&sz=w800"
+                    alt="OZiva Green Food" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Green Food</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva CB Product"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1KSoU40jI4J-4RdHaZfZve6n_agoiyTHd&sz=w800"
+                    alt="OZiva CB" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva CB Product</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva GB Variant"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=1xFhDIhDjCBigQlWU5KurLCTKhnStKOMW&sz=w800"
+                    alt="OZiva GB Variant" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva GB Variant</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva ACV Product"
+                data-desc="Product Photography">
+                <img src="https://drive.google.com/thumbnail?id=1f90q9yOvn5GtFaCgojQh103O-6KlAIEq&sz=w800"
+                    alt="OZiva ACV" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva ACV Product</h4>
+                    <p>Product Photography</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="product" data-title="OZiva ACV Variant"
+                data-desc="Product Design">
+                <img src="https://drive.google.com/thumbnail?id=19zczrh_pnXwBMiM6RQlHNXvVaZdImTpD&sz=w800"
+                    alt="OZiva ACV Variant" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva ACV Variant</h4>
+                    <p>Product Design</p>
+                </div>
+            </div>
+
+            <!-- ===================== E-COMMERCE (10 items) ===================== -->
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="OZiva Amazon Listing"
+                data-desc="Amazon E-Commerce">
+                <img src="https://drive.google.com/thumbnail?id=1OG755fEsFt59Go5etSKGIAfux0ZsRwdf&sz=w800"
+                    alt="OZiva Amazon Listing" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Amazon Listing</h4>
+                    <p>Amazon E-Commerce</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="OZiva Listing Design"
+                data-desc="Amazon E-Commerce">
+                <img src="https://drive.google.com/thumbnail?id=1QsbZKt2SEBOvIGmI8s-M3gCFkzL-aLwh&sz=w800"
+                    alt="OZiva Listing Design" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva Listing Design</h4>
+                    <p>Amazon E-Commerce</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Amazon NI Table"
+                data-desc="Amazon Infographic">
+                <img src="https://drive.google.com/thumbnail?id=1qPpWxq4z0V0jYIbL2UgTMT8lQKNRm1mP&sz=w800"
+                    alt="Amazon NI Table" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Amazon NI Table</h4>
+                    <p>Amazon Infographic</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Amazon Product Visual"
+                data-desc="E-Commerce Design">
+                <img src="https://drive.google.com/thumbnail?id=1x1C-HW-i7GFF-Cq-xNM_HMmfT_4AW1Hi&sz=w800"
+                    alt="Amazon Product Visual" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Amazon Product Visual</h4>
+                    <p>E-Commerce Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Amazon Listing Variant A"
+                data-desc="E-Commerce Design">
+                <img src="https://drive.google.com/thumbnail?id=17PlLOEQajVA-ZCb9Ub3BR-DhdMJJueR7&sz=w800"
+                    alt="Amazon Listing A" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Amazon Listing Variant A</h4>
+                    <p>E-Commerce Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Amazon Listing Variant B"
+                data-desc="E-Commerce Design">
+                <img src="https://drive.google.com/thumbnail?id=1PR5fPJfGepku9OZr6xUjJAYwep6zBeKx&sz=w800"
+                    alt="Amazon Listing B" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Amazon Listing Variant B</h4>
+                    <p>E-Commerce Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="OZiva ACV Catalog"
+                data-desc="E-Commerce Catalog">
+                <img src="https://drive.google.com/thumbnail?id=17lLf2KJBqwF7TTDmQGEFspcP5X4we-7B&sz=w800"
+                    alt="OZiva ACV Catalog" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>OZiva ACV Catalog</h4>
+                    <p>E-Commerce Catalog</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Prasha Lifestyle Banner"
+                data-desc="E-Commerce Banner">
+                <img src="https://drive.google.com/thumbnail?id=1RrQQJkMlT6zGFppvxOqauMXObFNa2-Iy&sz=w800"
+                    alt="Prasha Lifestyle Banner" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Prasha Lifestyle Banner</h4>
+                    <p>E-Commerce Banner</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Blog Banner Design"
+                data-desc="Digital Marketing">
+                <img src="https://drive.google.com/thumbnail?id=1J4rGp6GjZIXm9RfY9CKy_KZOUlwTN_kv&sz=w800"
+                    alt="Blog Banner" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Blog Banner Design</h4>
+                    <p>Digital Marketing</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="ecommerce" data-title="Blog Banner Variant"
+                data-desc="Digital Marketing">
+                <img src="https://drive.google.com/thumbnail?id=1rQxRWb4zugx7K59IlPvqkqwVhKiOZu1C&sz=w800"
+                    alt="Blog Banner Variant" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Blog Banner Variant</h4>
+                    <p>Digital Marketing</p>
+                </div>
+            </div>
+
+            <!-- ===================== APPAREL (10 items — 4 true apparel + 6 dual-tagged) ===================== -->
+
+            <div class="gallery-item show" data-category="apparel" data-title="Bucket Hat Embroidery Green"
+                data-desc="Apparel Mockup">
+                <img src="https://drive.google.com/thumbnail?id=14D1pIDb9-cQ2c0AWWuQ8oZOlgXl4cmds&sz=w800"
+                    alt="Bucket Hat Green" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Bucket Hat Embroidery Green</h4>
+                    <p>Apparel Mockup</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel" data-title="Bucket Hat Embroidery"
+                data-desc="Apparel Mockup">
+                <img src="https://drive.google.com/thumbnail?id=18FggUTcrQFJt_c-x2Xg7Jt8YSGJA6_Cu&sz=w800"
+                    alt="Bucket Hat" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Bucket Hat Embroidery</h4>
+                    <p>Apparel Mockup</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel" data-title="T-Shirt Mockup"
+                data-desc="Apparel Design">
+                <img src="https://drive.google.com/thumbnail?id=1gju-gi41vhsG-zOj7y1VQ9ZTi6PV5tYD&sz=w800"
+                    alt="T-Shirt Mockup" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>T-Shirt Mockup</h4>
+                    <p>Apparel Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel" data-title="Jacket Design"
+                data-desc="Apparel Mockup">
+                <img src="https://drive.google.com/thumbnail?id=1y9spXlKJyNZs8SEqoB62hERrYIOSbB8J&sz=w800"
+                    alt="Jacket Design" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Jacket Design</h4>
+                    <p>Apparel Mockup</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Fashion Campaign"
+                data-desc="Fashion & Lifestyle">
+                <img src="https://drive.google.com/thumbnail?id=1ZsAmPcAmsd7PLucOWwoT5t409ubkzD9H&sz=w800"
+                    alt="Fashion Campaign" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Fashion Campaign</h4>
+                    <p>Fashion & Lifestyle</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Fashion Collaboration Post"
+                data-desc="Fashion & Social Media">
+                <img src="https://drive.google.com/thumbnail?id=1DWwMM_ZUzUMQy8_ixRyBEfepykeIFz_A&sz=w800"
+                    alt="Collab Post" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Fashion Collaboration Post</h4>
+                    <p>Fashion & Social Media</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Embrace Fashion Banner"
+                data-desc="Fashion & Lifestyle">
+                <img src="https://drive.google.com/thumbnail?id=1U5SU9pjdutsj-Q7ItP1o1CyyqL3uJiz6&sz=w800"
+                    alt="Embrace Banner" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Embrace Fashion Banner</h4>
+                    <p>Fashion & Lifestyle</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Lifestyle Post Design 1"
+                data-desc="Fashion & Social Media">
+                <img src="https://drive.google.com/thumbnail?id=1uRrbiXxqx2zcEijwvfuzLC1aZ4RV38l_&sz=w800" alt="Post 7"
+                    loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Lifestyle Post Design 1</h4>
+                    <p>Fashion & Social Media</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Lifestyle Post Design 2"
+                data-desc="Fashion & Social Media">
+                <img src="https://drive.google.com/thumbnail?id=1TqmrH-pxVmkNFu-KpZQsnct0txU4YJSp&sz=w800" alt="Post 11"
+                    loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Lifestyle Post Design 2</h4>
+                    <p>Fashion & Social Media</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="apparel marketing" data-title="Lifestyle Post Design 3"
+                data-desc="Fashion & Social Media">
+                <img src="https://drive.google.com/thumbnail?id=1XWyVjxqk7tSAO2BmHbP6vkS-_yghGEi1&sz=w800" alt="Post 12"
+                    loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Lifestyle Post Design 3</h4>
+                    <p>Fashion & Social Media</p>
+                </div>
+            </div>
+
+            <!-- ===================== MARKETING (10 items) ===================== -->
+
+            <div class="gallery-item show" data-category="marketing" data-title="Event Flyer Design"
+                data-desc="Marketing Creative">
+                <img src="https://drive.google.com/thumbnail?id=1QFtemxLN-FrMR4fSCjrMopzc373fngD2&sz=w800"
+                    alt="Event Flyer" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Event Flyer Design</h4>
+                    <p>Marketing Creative</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="marketing" data-title="CIAO Italian Pizza"
+                data-desc="Food & Beverage Design">
+                <img src="https://drive.google.com/thumbnail?id=1QQwzk0pQGlB4Cws1mOJdaGh2PTohuZPs&sz=w800"
+                    alt="Pizza Design" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>CIAO Italian Pizza</h4>
+                    <p>Food & Beverage Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="marketing" data-title="Mother's Day Sale"
+                data-desc="Promotional Design">
+                <img src="https://drive.google.com/thumbnail?id=1b4VmZEjbgore1ELq-nM3v5uymC0TIQ7W&sz=w800"
+                    alt="Mothers Day Sale" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Mother's Day Sale</h4>
+                    <p>Promotional Design</p>
+                </div>
+            </div>
+
+            <div class="gallery-item show" data-category="marketing" data-title="Social Media Post Design"
+                data-desc="Social Media Creative">
+                <img src="https://drive.google.com/thumbnail?id=1Xq5n24u6D86x1roa5XxVhkh8Mbl8NE-x&sz=w800" alt="Post 13"
+                    loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="view-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg></div>
+                    <h4>Social Media Post Design</h4>
+                    <p>Social Media Creative</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <span class="section-label">Services</span>
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">End-to-end design solutions tailored to your brand.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">🎨</div>
+                <h3>Brand Identity</h3>
+                <p>Logos, color systems, typography, and full brand guidelines that set you apart from the competition.
+                </p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📦</div>
+                <h3>Product Design</h3>
+                <p>Product photography, packaging design, and catalog layouts that make your products shine.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🛒</div>
+                <h3>E-Commerce Visuals</h3>
+                <p>Amazon listing images, product infographics, and marketplace-optimized designs that drive sales.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <p>Carousel posts, stories, campaign visuals, and content that boosts engagement across platforms.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">👕</div>
+                <h3>Apparel & Merch</h3>
+                <p>T-shirt designs, hat embroidery, jacket graphics, and complete apparel mockup presentations.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">📐</div>
+                <h3>Marketing Creatives</h3>
+                <p>Banners, flyers, event posters, and promotional materials that capture attention and convert.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header reveal">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Let's Work Together</h2>
+        </div>
+        <div class="contact-card reveal">
+            <h3>Have a project in mind?</h3>
+            <p>I'm always open to new opportunities and exciting design challenges. Let's create something amazing
+                together.</p>
+            <div class="contact-links">
+                <a href="mailto:hello@example.com" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+                    </svg>
+                    Behance
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 <span class="gradient-text">Portfolio</span> — Designed with passion ✨</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+        <div class="lightbox-info">
+            <h4 id="lightboxTitle"></h4>
+            <p id="lightboxDesc"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
