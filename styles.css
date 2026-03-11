@@ -3,8 +3,7 @@
    Premium dark-themed graphic design portfolio
    ============================================ */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+/* --- Google Fonts loaded via <link> in HTML for non-blocking rendering --- */
 
 /* --- Design Tokens --- */
 :root {
@@ -566,6 +565,8 @@ section {
 .gallery-grid {
     columns: 3;
     column-gap: 1.25rem;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 2000px;
 }
 
 .gallery-item {
@@ -577,14 +578,14 @@ section {
     cursor: pointer;
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    transition: var(--transition-smooth);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     min-height: 120px;
+    contain: layout style;
 }
 
 .gallery-item:hover {
     border-color: var(--border-glow);
     box-shadow: var(--shadow-glow);
-    transform: translateY(-4px);
 }
 
 .gallery-item img {
@@ -592,13 +593,14 @@ section {
     height: auto;
     min-height: 100px;
     display: block;
-    transition: var(--transition-smooth);
+    transition: transform 0.4s ease, opacity 0.3s ease;
     background: var(--bg-card);
     object-fit: cover;
+    will-change: transform;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 .gallery-overlay {
@@ -655,13 +657,17 @@ section {
 }
 
 .gallery-item.show {
-    animation: fadeInUp 0.5s ease forwards;
+    opacity: 1;
 }
 
-@keyframes fadeInUp {
+.gallery-item.filter-enter {
+    animation: fadeIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px);
     }
 
     to {
@@ -675,14 +681,16 @@ section {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition-smooth);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    will-change: opacity;
 }
 
 .lightbox.active {

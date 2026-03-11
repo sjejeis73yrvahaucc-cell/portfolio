@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loader.classList.add('hidden');
                 // Remove from DOM after transition to free resources
                 setTimeout(() => loader.remove(), 600);
-            }, 400);
+            }, 300);
         };
         if (document.readyState === 'complete') {
             hideLoader();
@@ -88,9 +88,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Gallery Filter ---
+    // --- Gallery Filter (with staggered animation) ---
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryGrid = document.getElementById('galleryGrid');
     const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Cache for visible items — invalidated on filter change
+    let cachedVisibleItems = null;
+
+    function invalidateCache() {
+        cachedVisibleItems = null;
+    }
+
+    function getVisibleItems() {
+        if (cachedVisibleItems) return cachedVisibleItems;
+        cachedVisibleItems = [...document.querySelectorAll('.gallery-item:not(.hidden)')].filter(
+            item => item.style.display !== 'none' // also exclude error-hidden items
+        );
+        return cachedVisibleItems;
+    }
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -99,36 +115,59 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
-            let visibleIndex = 0;
+            invalidateCache();
 
-            galleryItems.forEach((item) => {
+            // Batch DOM reads first, then writes
+            const showItems = [];
+            const hideItems = [];
+
+            galleryItems.forEach(item => {
                 const categories = item.dataset.category.split(' ');
                 const match = filter === 'all' || categories.includes(filter);
                 if (match) {
-                    item.classList.remove('hidden');
-                    item.classList.add('show');
-                    item.style.animationDelay = `${visibleIndex * 0.04}s`;
-                    visibleIndex++;
+                    showItems.push(item);
                 } else {
-                    item.classList.add('hidden');
-                    item.classList.remove('show');
+                    hideItems.push(item);
+                }
+            });
+
+            // Batch DOM writes
+            hideItems.forEach(item => {
+                item.classList.add('hidden');
+                item.classList.remove('show', 'filter-enter');
+            });
+
+            // Stagger animations — only animate first 20 for performance, rest appear instantly
+            showItems.forEach((item, i) => {
+                item.classList.remove('hidden');
+                item.classList.add('show');
+                if (i < 20) {
+                    item.classList.remove('filter-enter');
+                    // Force reflow for animation restart on just a few items
+                    void item.offsetWidth;
+                    item.style.animationDelay = `${i * 0.03}s`;
+                    item.classList.add('filter-enter');
+                } else {
+                    item.classList.remove('filter-enter');
+                    item.style.animationDelay = '';
                 }
             });
         });
     });
 
-    // --- Image error handling ---
-    // Replace broken images with a styled placeholder
-    galleryItems.forEach(item => {
-        const img = item.querySelector('img');
-        if (img) {
-            img.addEventListener('error', () => {
-                // Hide items with broken images so they don't show empty boxes
-                item.style.display = 'none';
-                console.warn('Image failed to load:', img.src);
-            });
-        }
-    });
+    // --- Image error handling (event delegation) ---
+    if (galleryGrid) {
+        galleryGrid.addEventListener('error', (e) => {
+            if (e.target.tagName === 'IMG') {
+                const item = e.target.closest('.gallery-item');
+                if (item) {
+                    item.style.display = 'none';
+                    invalidateCache();
+                    console.warn('Image failed to load:', e.target.src);
+                }
+            }
+        }, true); // Use capture phase to catch img errors
+    }
 
     // --- Lightbox ---
     const lightbox = document.getElementById('lightbox');
@@ -142,23 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
 
-    function getVisibleItems() {
-        return [...document.querySelectorAll('.gallery-item:not(.hidden)')].filter(
-            item => item.style.display !== 'none' // also exclude error-hidden items
-        );
-    }
-
-    function buildLargeUrl(thumbnailSrc) {
-        // Extract file ID from any form of Google Drive thumbnail URL
-        // and build a reliable large-image URL
-        const idMatch = thumbnailSrc.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-        if (idMatch) {
-            return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1600`;
-        }
-        // Fallback: just return the original
-        return thumbnailSrc;
-    }
-
     function openLightbox(index) {
         if (!lightbox || !lightboxImg) return;
         const items = getVisibleItems();
@@ -168,12 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const thumbImg = item.querySelector('img');
         if (!thumbImg) return;
 
-        // Build a reliable large URL from the file ID
-        const largeSrc = buildLargeUrl(thumbImg.src);
-
-        // Show loading state
+        // Use the image source directly
         lightboxImg.style.opacity = '0.3';
-        lightboxImg.src = largeSrc;
+        lightboxImg.src = thumbImg.src;
         lightboxImg.alt = item.dataset.title || '';
 
         // When loaded, reveal
@@ -181,8 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxImg.style.opacity = '1';
         };
         lightboxImg.onerror = () => {
-            // If large size fails, fallback to original thumbnail
-            lightboxImg.src = thumbImg.src;
             lightboxImg.style.opacity = '1';
         };
 
@@ -191,6 +208,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Preload adjacent images for instant navigation
+        preloadAdjacentImages(index, items);
+    }
+
+    function preloadAdjacentImages(index, items) {
+        const preloadOffsets = [-1, 1, 2]; // prev, next, next+1
+        preloadOffsets.forEach(offset => {
+            const i = (index + offset + items.length) % items.length;
+            const img = items[i]?.querySelector('img');
+            if (img && img.src) {
+                const preload = new Image();
+                preload.src = img.src;
+            }
+        });
     }
 
     function closeLightbox() {
@@ -211,16 +243,17 @@ document.addEventListener('DOMContentLoaded', () => {
         openLightbox(currentIndex);
     }
 
-    // Attach click handlers to gallery items
-    galleryItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            // Prevent default link navigation if any
+    // --- Gallery click handler (event delegation) ---
+    if (galleryGrid) {
+        galleryGrid.addEventListener('click', (e) => {
+            const item = e.target.closest('.gallery-item');
+            if (!item) return;
             e.preventDefault();
             const visibleItems = getVisibleItems();
             const index = visibleItems.indexOf(item);
             if (index !== -1) openLightbox(index);
         });
-    });
+    }
 
     // Lightbox controls
     if (lightboxClose) {
